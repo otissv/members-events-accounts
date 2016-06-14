@@ -1,13 +1,13 @@
-import legdgerAccount from './legdger-account-schemas';
+import ledgerAccount from './ledger-account-schemas';
 import posting from './posting-schemas';
 
 
 const typeDefinitions = `
 type Query {
-  postingFindOne(_id: String, name: String): String
-  postingsFind(_id: String, name: String): [String]
-  legdgerAccountFindOne(_id: String, name: String, ): String
-  legdgerAccountsFind(_id: String, name: String): [String]
+  postingFindOne(_id: String, name: String): Posting
+  postingsFind(_id: String, name: String): [Posting]
+  ledgerAccountFindOne(_id: String, name: String, ): LegdgerAccount
+  ledgerAccountsFind(_id: String, name: String): [LegdgerAccount]
 }
 
 schema {
@@ -16,7 +16,7 @@ schema {
 `;
 
 export default [
-  legdgerAccount,
+  ledgerAccount,
   posting,
   typeDefinitions
 ];
