@@ -4,7 +4,6 @@ export default {
   },
 
   postingsFind (_, args, context) {
-    console.log(context.connectors.posting.find());
     return context.connectors.posting.find();
   }
 };

@@ -6,10 +6,11 @@ const postingSchema = new Schema({
     type    : String,
     required: 'Please enter an account description.'
   },
-  referense : String,
+  reference : String,
   credit    : String,
   debit     : String,
-  currency  : String
+  currencyId  : String
 });
+
 
 export default mongoose.model('Posting', postingSchema);

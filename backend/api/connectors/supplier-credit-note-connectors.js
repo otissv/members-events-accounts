@@ -2,11 +2,11 @@ import mongodb from 'mongodb';
 
 const client = mongodb.MongoClient.connect('mongodb://127.0.0.1:27017/test');
 
-export default class LedgerAccount {
+export default class SupplierCreditNote {
 
   findOne () {
     return client.then(db => {
-      return db.collection('ledger.accounts').findOne()
+      return db.collection('supplier.credit-note').findOne()
         .then((docs) => docs)
         .catch((err) => err.stack);
     });
@@ -15,7 +15,7 @@ export default class LedgerAccount {
   find (query = {}, options = {}) {
     return client.then(db => {
       return new Promise((resolve, reject) => {
-        return db.collection('ledger.accounts').find()
+        return db.collection('supplier.credit-note').find()
         .toArray((err, result) => {
           if (err) {
             reject(err);
@@ -26,5 +26,5 @@ export default class LedgerAccount {
       });
     });
   }
-
+  
 }

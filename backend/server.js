@@ -9,9 +9,9 @@ import express from 'express';
 import main from './main.js';
 
 const app = express();
+
+
 main(app, express);
-
-
 app.set('port', process.env.PORT || app.locals.port);
 
 const server = app.listen(app.get('port'), () => {
