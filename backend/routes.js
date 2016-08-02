@@ -15,6 +15,11 @@ export default function routes (app) {
     return res.status(403).send('403 Forbidden');
   });
 
+  app.use('/*', (req, res, next) => {
+    // console.log(req.headers);
+    next();
+  });
+
   app.use('/graphql', apolloServer({
     graphiql  : true,
     pretty    : true,
