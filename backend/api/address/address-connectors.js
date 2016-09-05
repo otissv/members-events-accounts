@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import objectId from 'bson-objectid';
+import { objectId } from '../../helpers/objectId-helpers';
 
 import {
   ADDRESS_FIND,
@@ -18,7 +18,9 @@ function query (args) {
 
 
 export default class Address {
+
   find (args = {}) {
+    console.log('addr find connector');
     return client.then(db => {
       return new Promise((resolve, reject) => {
         return db.collection('addresses').find(query(args), projection)
@@ -34,6 +36,7 @@ export default class Address {
   }
 
   findById (args = {}) {
+    console.log('addr findById connector');
     return client.then(db => {
       return db.collection('addresses').findOne(query(args), projection)
         .then((doc) => doc)
@@ -42,6 +45,7 @@ export default class Address {
   }
 
   findOne (args = {}) {
+    console.log('addr findOne connector');
     return client.then(db => {
       return db.collection('addresses').findOne(query(args), projection)
         .then((doc) => doc)

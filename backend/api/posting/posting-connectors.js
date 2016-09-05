@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import objectId from 'bson-objectid';
+import { objectId } from '../../helpers/objectId-helpers';
 
 
 const client = mongodb.MongoClient.connect('mongodb://127.0.0.1:27017/test');

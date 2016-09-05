@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import objectId from 'bson-objectid';
+import { objectId } from '../../helpers/objectId-helpers';
 
 const client = mongodb.MongoClient.connect('mongodb://127.0.0.1:27017/test');
 const projection = {};
@@ -11,6 +11,10 @@ function query (args) {
 
 
 export default class User {
+  create (args = {}) {
+    console.log(args);
+  }
+  
   find (args = {}) {
     return client.then(db => {
       return new Promise((resolve, reject) => {
@@ -25,6 +29,7 @@ export default class User {
       });
     });
   }
+
 
   findById (args = {}) {
     return client.then(db => {

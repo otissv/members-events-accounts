@@ -1,5 +1,11 @@
-export default {
+import {
+  createdBy,
+  updatedBy
+} from '../context.js';
+
+export const noteQueries = {
   notesFind (_, args, context) {
+    console.log(args);
     return context.connectors.note.find(args);
   },
 
@@ -14,11 +20,11 @@ export default {
 
 
 export const Note = {
-  createdBy (user, args, context) {
-    return context.connectors.user.find({ _id: user.createdBy });
+  createdBy (query, args, context) {
+    return createdBy(query, context.connectors.user);
   },
 
-  updatedBy (user, args, context) {
-    return context.connectors.user.find({_id: user.updatedBy});
+  updatedBy (query, args, context) {
+    return updatedBy(query, context.connectors.user);
   }
 };

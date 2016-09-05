@@ -1,18 +1,9 @@
+import { find, findById, findOne } from '../../helpers/mock-helper';
 
 export const supplierInvoicesMock = [];
 
 export default class SupplierInvoiceMock {
-  find (query) {
-    if (Array.isArray(query)) return supplierInvoicesMock.find(a => query.find(q => q._id === a._id));
-    if (query._id) return supplierInvoicesMock.filter(item => item._id === query._id)[0];
-    return supplierInvoicesMock;
-  }
-
-  findById (query) {
-    return supplierInvoicesMock.filter(item => item._id === query._id)[0];
-  }
-
-  findOne () {
-    return supplierInvoicesMock[0];
-  }
+  find (query) { return find(query, supplierInvoicesMock) }
+  findById (query) { return findById(query, supplierInvoicesMock) }
+  findOne () { return findOne(supplierInvoicesMock) }
 }

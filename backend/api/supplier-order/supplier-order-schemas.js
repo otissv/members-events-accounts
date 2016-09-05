@@ -1,15 +1,22 @@
 export default `
 type SupplierOrder {
-  _id 		     : String,
-  amount 		   : String,
-  discount     : String,
-  postingId    : String,
-  quanity 		 : String,
-  created      : String,
-  createdBy    : User,
-  notes        : [Note],
-  updated      : String,
-  updatedBy    : User
+  _id 		            : String,
+  amount 		          : String,
+  billingAdderss      : Address,
+  created             : String,
+  createdBy           : User,
+  discount            : String,
+  notes               : [Note],
+  posting             : Posting,
+  quanity 		        : String,
+  shippingAddress     : String,
+  shippingMethod      : String,
+  status              : String,
+  supplier            : User,
+  supplierCreditNotes : [SupplierCreditNote],
+  supplierInvoices    : [SupplierInvoice],
+  updated             : String,
+  updatedBy           : User
 }
 `;
 

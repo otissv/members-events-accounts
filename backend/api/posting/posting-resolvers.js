@@ -1,4 +1,11 @@
-export default {
+import {
+  createdBy,
+  ledgerAccount,
+  notes,
+  updatedBy
+} from '../context.js';
+
+export const postingQueries = {
   postingsFind (_, args, context) {
     return context.connectors.posting.find(args);
   },
@@ -14,15 +21,19 @@ export default {
 
 
 export const Posting = {
-  notes (notes, args, context) {
-    return context.connectors.note.find(notes);
+  createdBy (query, args, context) {
+    return createdBy(query, context.connectors.user);
   },
 
-  createdBy (user, args, context) {
-    return context.connectors.user.find({ _id: user.createdBy });
+  ledgerAccount (query, args, context) {
+    return ledgerAccount(query, context.connectors.ledgerAccount);
   },
 
-  updatedBy (user, args, context) {
-    return context.connectors.user.find({_id: user.updatedBy});
+  notes (query, args, context) {
+    return notes(query, context.connectors.note);
+  },
+
+  updatedBy (query, args, context) {
+    return updatedBy(query, context.connectors.user);
   }
 };

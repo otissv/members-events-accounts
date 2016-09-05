@@ -7,7 +7,7 @@ type Address {
   city      : String,
   country   : String,
   created   : String,
-  createdBy : User,
+  createdBy : User
   current   : Boolean,
   notes     : [Note],
   postCode  : String,

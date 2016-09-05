@@ -1,15 +1,22 @@
 export default `
 type ClientOrder {
-  _id 		     : String,
-  amount 		   : String,
-  created      : String,
-  createdBy    : User,
-  discount     : String,
-  notes        : [Note],
-  postingId    : String,
-  quanity 		 : String,
-  updated      : String,
-  updatedBy    : User
+  _id 		         : String,
+  billingAdderss   : Address,
+  amount 		       : String,
+  client 		       : User,
+  clientCreditNotes: [ClientCreditNote]
+  clientInvoices   : [ClientInvoice],
+  created          : String,
+  createdBy        : User,
+  discount         : String,
+  notes            : [Note],
+  posting          : Posting,
+  quanity 		     : String,
+  shippingAddress  : Address,
+  shippingMethod   : String,
+  status           : String,
+  updated          : String,
+  updatedBy        : User
  }
 `;
 

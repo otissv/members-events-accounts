@@ -2,15 +2,15 @@
 export default `
 type Posting {
   _id 		       : String,
-  categoryId     : String
+  category       : String
   created        : String,
   createdBy      : User,
-  credit 		     : String,
-  currencyId 		 : String,
-  debit 		     : String,
+  credit 		     : Int,
+  currency  		 : String,
+  debit 		     : Int,
   description		 : String,
-  discount       : String,
-  ledgerAccountId: String,
+  discount       : Int,
+  ledgerAccount  : LedgerAccount,
   notes          : [Note],
   reference      : String,
   transactionType: String,

@@ -9,7 +9,7 @@ import logger from '../middleware/logger-middleware';
 import body from '../middleware/body-middleware';
 import staticFiles from '../middleware/staticFiles-middleware';
 // import session from '../backend/middleware/session-middleware';
-import security from '../middleware/security-middleware';
+// import security from '../middleware/security-middleware';
 
 
 export default function middleware (app, express) {
@@ -18,5 +18,5 @@ export default function middleware (app, express) {
   body(app);
   staticFiles(app, express);
   // session(app, mongodb.instance());
-  security(app);
+  // security(app);/
 };

@@ -1,4 +1,10 @@
-export default {
+import {
+  notes,
+  students,
+  updatedBy
+} from '../context.js';
+
+export const eventCategoryQueries = {
   eventCategoriesFind (_, args, context) {
     return context.connectors.eventCategory.find(args);
   },
@@ -14,19 +20,19 @@ export default {
 
 
 export const EventCategory = {
-  students (students, args, context) {
+  createdBy (query, args, context) {
+    return createdBy(query, context.connectors.user);
+  },
+
+  notes (query, args, context) {
+    return notes(query, context.connectors.note);
+  },
+
+  students (query, context) {
     return context.connectors.note.find(students);
   },
 
-  notes (notes, args, context) {
-    return context.connectors.note.find(notes);
-  },
-
-  createdBy (user, args, context) {
-    return context.connectors.user.find({ _id: user.createdBy });
-  },
-
-  updatedBy (user, args, context) {
-    return context.connectors.user.find({_id: user.updatedBy});
+  updatedBy (query, args, context) {
+    return updatedBy(query, context.connectors.user);
   }
 };

@@ -1,4 +1,14 @@
-export default {
+import {
+  address,
+  createdBy,
+  eventCategory,
+  instructors,
+  notes,
+  updatedBy
+} from '../context.js';
+
+
+export const eventQueries = {
   eventFind (_, args, context) {
     return context.connectors.event.find(args);
   },
@@ -13,24 +23,28 @@ export default {
 };
 
 
-export const EventCatergory = {
-  address (address, args, context) {
-    return context.connectors.address.find(address);
+export const Event = {
+  address (query, args, context) {
+    return address(query, context.connectors.address);
   },
 
-  category (category, args, context) {
-    return context.connectors.category.find({ _id: category });
+  category (query, args, context) {
+    return eventCategory(query, context.connectors.eventCategory);
   },
 
-  notes (notes, args, context) {
-    return context.connectors.note.find(notes);
+  createdBy (query, args, context) {
+    return createdBy(query, context.connectors.user);
   },
 
-  createdBy (user, args, context) {
-    return context.connectors.user.find({ _id: user.createdBy });
+  instructors (query, args, context) {
+    return instructors(query, context.connectors.user);
   },
 
-  updatedBy (user, args, context) {
-    return context.connectors.user.find({_id: user.updatedBy});
+  notes (query, args, context) {
+    return notes(query, context.connectors.note);
+  },
+
+  updatedBy (query, args, context) {
+    return updatedBy(query, context.connectors.user);
   }
 };

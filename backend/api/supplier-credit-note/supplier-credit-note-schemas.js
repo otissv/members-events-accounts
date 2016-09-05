@@ -1,16 +1,20 @@
 export default `
 type SupplierCreditNote {
-  _id 		     : String,
-  amount       : String,
-  clientId 		 : String,
-  created      : String,
-  createdBy    : User,
-  invoicesIds  : String,
-  notes        : [Note],
-  postingId    : String,
-  status       : String,
-  updated      : String,
-  updatedBy    : User
+  _id 		            : String,
+  billingAdderss      : Address,
+  amount              : Int,
+  created             : String,
+  createdBy           : User,
+  notes               : [Note],
+  posting             : Posting,
+  shippingAddress     : Address,
+  shippingMethod      : String,
+  status              : String,
+  supplier            : User,
+  supplierInvoices    : [SupplierInvoice],
+  supplierOrders      : [SupplierOrder],
+  updated             : String,
+  updatedBy           : User
 }
 `;
 

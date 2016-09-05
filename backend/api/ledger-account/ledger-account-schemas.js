@@ -1,13 +1,12 @@
 
 export default `
-type LegdgerAccount {
+type LedgerAccount {
   _id        : String,
   created    : String,
   createdBy  : User,
   description: String,
   name       : String,
   notes      : [Note],
-  notesIds   : String,
   status     : String,
   updated    : String,
   updatedBy  : User
@@ -16,7 +15,7 @@ type LegdgerAccount {
 
 
 export const ledgerAccountQueries = `
-  ledgerAccountsFind(_id: String, name: String): [LegdgerAccount]
-  ledgerAccountFindById(_id: String, name: String): LegdgerAccount
-  ledgerAccountFindOne(_id: String, name: String): LegdgerAccount
+  ledgerAccountsFind(_id: String, name: String): [LedgerAccount]
+  ledgerAccountFindById(_id: String, name: String): LedgerAccount
+  ledgerAccountFindOne(_id: String, name: String): LedgerAccount
 `;

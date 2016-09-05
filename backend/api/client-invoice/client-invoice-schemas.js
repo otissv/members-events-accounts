@@ -1,19 +1,19 @@
 export default `
 type ClientInvoice {
-  _id 		        : String,
-  billingAdderss  : String,
-  clientId 		    : String,
-  created         : String,
-  createdBy       : User,
-  creditNoteIds   : String,
-  notes           : [Note],
-  orderId         : String,
-  postingId       : String,
-  shippingAddress : String,
-  shippingMethod  : String,
-  status          : String,
-  updated         : String,
-  updatedBy       : User
+  _id 		         : String,
+  billingAdderss   : Address,
+  client 		       : User,
+  clientCreditNotes: [ClientCreditNote],
+  clientOrders     : [ClientOrder],
+  created          : String,
+  createdBy        : User,
+  notes            : [Note],
+  posting          : Posting,
+  shippingAddress  : Address,
+  shippingMethod   : String,
+  status           : String,
+  updated          : String,
+  updatedBy        : User
 }
 `;
 

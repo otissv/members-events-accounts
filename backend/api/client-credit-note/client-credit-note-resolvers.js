@@ -1,4 +1,17 @@
-export default {
+import {
+  billingAdderss,
+  client,
+  clientInvoices,
+  clientOrders,
+  createdBy,
+  notes,
+  posting,
+  shippingAddress,
+  updatedBy
+} from '../context.js';
+
+
+export const clientCreditNoteQueries = {
   clientCreditNotesFind (_, args, context) {
     return context.connectors.clientCreditNote.find(args);
   },
@@ -14,15 +27,39 @@ export default {
 
 
 export const ClientCreditNote = {
-  notes (notes, args, context) {
-    return context.connectors.note.find(notes);
+  billingAdderss (query, args, context) {
+    return billingAdderss(query, context.connectors.address);
   },
 
-  createdBy (user, args, context) {
-    return context.connectors.user.find({ _id: user.createdBy });
+  client (query, args, context) {
+    return client(query, context.connectors.user);
   },
 
-  updatedBy (user, args, context) {
-    return context.connectors.user.find({_id: user.updatedBy});
+  clientInvoices (query, args, context) {
+    return clientInvoices(query, context.connectors.clientInvoice);
+  },
+
+  clientOrders (query, args, context) {
+    return clientOrders(query, context.connectors.clientOrder);
+  },
+
+  createdBy (query, args, context) {
+    return createdBy(query, context.connectors.user);
+  },
+
+  notes (query, args, context) {
+    return notes(query, context.connectors.note);
+  },
+
+  posting (query, args, context) {
+    return posting(query, context.connectors.posting);
+  },
+
+  shippingAddress (query, args, context) {
+    return billingAdderss(query, context.connectors.address);
+  },
+
+  updatedBy (query, args, context) {
+    return updatedBy(query, context.connectors.user);
   }
 };

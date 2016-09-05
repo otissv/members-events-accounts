@@ -5,7 +5,7 @@ import Promise from 'bluebird';
 
 const config = {
   base    : './',
-  folder  : './__tests__',
+  folder  : './backend/api',
   ext  : '-test.js',
   options : {
     ignore: './node_modules/**'
@@ -40,29 +40,31 @@ function requireFiles (config) {
   const ext = config.ext || '';
   const pattern = `${config.folder}/**/*${ext}`;
 
+
   glob(pattern, config.options, (err, files) => {
     if (err) {
-      return err;
+      throw new Error(err);
     }
 
-    console.log();
-    glob('./__tests__/pretests.js', (err, testPresets) => {
-      if (err) {
-        console.log(err);
-      }
-      if (testPresets[0] == null) {
-        runTest(files);
+    runTest(files);
 
-      } else {
-        const request = promisifyAsync(require(testPresets[0]));
-
-        request().then(function (message) {
-          runTest(files);
-        }).catch(function (err) {
-          console.log('error!', err);
-        });
-      }
-    });
+    // glob('./__tests__/pretests.js', (err, testPresets) => {
+    //   if (err) {
+    //     console.log(err);
+    //   }
+    //   if (testPresets[0] == null) {
+    //     runTest(files);
+    //
+    //   } else {
+    //     const request = promisifyAsync(require(testPresets[0]));
+    //
+    //     request().then(function (message) {
+    //       runTest(files);
+    //     }).catch(function (err) {
+    //       console.log('error!', err);
+    //     });
+    //   }
+    // });
 
 
   });

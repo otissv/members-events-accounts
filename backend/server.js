@@ -19,9 +19,9 @@ const server = app.listen(app.get('port'), () => {
 });
 
 
-process.on('SIGINT', () => {
-  app.enable('shuttingDown');
-  server.close(() => {
-    process.exit();
-  });
-});
+// process.on('SIGINT', () => {
+//   app.enable('shuttingDown');
+//   server.close(() => {
+//     process.exit();
+//   });
+// });

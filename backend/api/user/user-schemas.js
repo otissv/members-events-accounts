@@ -24,3 +24,8 @@ export const userQueries = `
   userFindById(_id: String, name: String): User
   userFindOne(_id: String, name: String): User
 `;
+
+
+export const userMutaions = `
+  userCreate(_id: String): User
+`;

@@ -4,17 +4,13 @@ type Event {
   _id 	     : String,
   address    : Address,
   allDay     : Boolean,
-  category   : Category,
+  category   : EventCategory,
   created    : String,
   createdBy  : User,
   description: String,
   end        : String,
-  instructors: User,
+  instructors: [User],
   notes      : [Note],
-  invited    : [{
-    client   : User,
-    attended : Boolean
-  }],
   level      : String,
   start      : String,
   title      : String,
@@ -29,3 +25,10 @@ export const eventQueries = `
   eventFindById(_id: String, name: String): Event
   eventFindOne(_id: String, name: String): Event
 `;
+
+
+// category   : EventCategory,
+// invited    : [{
+//   client   : User,
+//   attended : Boolean
+// }],

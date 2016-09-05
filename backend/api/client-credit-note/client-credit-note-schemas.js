@@ -1,17 +1,15 @@
-
-
 export default `
 type ClientCreditNote {
   _id 		        : String,
-  billingAdderss  : String,
-  clientId 		    : String,
+  billingAdderss  : Address,
+  client    		  : User,
+  clientInvoices  : [ClientInvoice]
+  clientOrders    : [ClientOrder]
   created         : String,
   createdBy       : User,
-  creditNoteIds   : String,
   notes           : [Note],
-  orderId         : String,
-  postingId       : String,
-  shippingAddress : String,
+  posting         : Posting,
+  shippingAddress : Address,
   shippingMethod  : String,
   status          : String,
   updated         : String,
@@ -21,7 +19,7 @@ type ClientCreditNote {
 
 
 export const clientCreditNoteQueries = `
-  clientCreditNotesFind(_id: String, name: String): [ClientInvoice]
-  clientCreditNoteFindById(_id: String, name: String): ClientInvoice
-  clientCreditNoteFindOne(_id: String, name: String): ClientInvoice
+  clientCreditNotesFind(_id: String, name: String): [ClientCreditNote]
+  clientCreditNoteFindById(_id: String, name: String): ClientCreditNote
+  clientCreditNoteFindOne(_id: String, name: String): ClientCreditNote
 `;

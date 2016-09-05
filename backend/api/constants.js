@@ -18,7 +18,6 @@ export const CLIENT_ORDER_FIND               = 'CLIENT_ORDER_FIND';
 export const CLIENT_ORDER_FIND_BY_ID         = 'CLIENT_ORDER_FIND';
 export const CLIENT_ORDER_FIND_ONE           = 'CLIENT_ORDER_FIND_ONE';
 
-
 export const EVENT_CATEGORY_FIND             = 'EVENT_CATEGORY_FIND';
 export const EVENT_CATEGORY_FIND_BY_ID       = 'EVENT_CATEGORY_FIND_BY_ID';
 export const EVENT_CATEGORY_FIND_ONE         = 'EVENT_CATEGORY_FIND_ONE';

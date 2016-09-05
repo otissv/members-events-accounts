@@ -2,14 +2,22 @@
 export default `
 type Authentiaction {
   _id      : String,
-  email    : String,
-  password : String
+  password : String,
+  token    : String,
+  created  : String
 }
 `;
 
 
 export const authentiactionQueries = `
-  authentiacte(_id: [String]): Authentiaction
+  authenticate(_id: String): Authentiaction
   register(_id: String): Authentiaction
-  unauthentiacte(_id: String): Authentiaction
+  unauthenticate(_id: String): Authentiaction
+`;
+
+
+export const authentiactionMutations = `
+  authenticate(_id: String): Authentiaction
+  register(_id: String): Authentiaction
+  unauthenticate(_id: String): Authentiaction
 `;
