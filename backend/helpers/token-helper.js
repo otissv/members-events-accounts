@@ -12,21 +12,28 @@ const redis = instance;
 const TOKEN = 'token';
 const COLLECTION = 'users';
 
-function userTokenKey (_id) {
+export function userTokenKey (_id) {
   return `${COLLECTION}:${_id.toString()}`;
 }
 
-export function generateToken (user) {
 
-	// Generate json web token
-  const token = jwt.sign(user, secret);
+export function generateToken (fn) {
+  return function (user) {
+    // Generate json web token
+    const token = jwt.sign(user, secret);
 
 
-  // Save to token
-  if (user._id) {
-    redis().hset(userTokenKey(user._id), TOKEN, token);
+    // Save to token
+    if (user._id) {
+      fn({
+        _id: userTokenKey(user._id),
+        key: TOKEN,
+        value: token
+      })
+      // redis().hset(userTokenKey(user._id), TOKEN, token);
+    }
+    return token;
   }
-  return token;
 };
 
 

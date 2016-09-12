@@ -1,0 +1,56 @@
+export default {
+  'ADDRESS_FIND': true,
+  'ADDRESS_FIND_BY_ID': true,
+  'ADDRESS_FIND_ONE': true,
+
+  'CASH_SALE_FIND': true,
+  'CASH_SALE_FIND_BY_ID': true,
+  'CASH_SALE_FIND_ONE': true,
+
+  'CLIENT_CREDIT_NOTE_FIND': true,
+  'CLIENT_CREDIT_NOTE_FIND_BY_ID': true,
+  'CLIENT_CREDIT_NOTE_FIND_ONE': true,
+
+  'CLIENT_INVOICE_FIND': true,
+  'CLIENT_INVOICE_FIND_BY_ID': true,
+  'CLIENT_INVOICE_FIND_ONE': true,
+
+  'CLIENT_ORDER_FIND': true,
+  'CLIENT_ORDER_FIND': true,
+  'CLIENT_ORDER_FIND_ONE': true,
+
+  'EVENT_CATEGORY_FIND': true,
+  'EVENT_CATEGORY_FIND_BY_ID': true,
+  'EVENT_CATEGORY_FIND_ONE': true,
+
+  'EVENT_FIND': true,
+  'EVENT_FIND_BY_ID ': true,
+  'EVENT_FIND_ONE': true,
+
+  'LEDGER_ACCOUNT_FIND': true,
+  'LEDGER_ACCOUNT_FIND_BY_ID': true,
+  'LEDGER_ACCOUNT_FIND_ONE': true,
+
+  'NOTE_FIND': true,
+  'NOTE_FIND_BY_ID': true,
+  'NOTE_FIND_ONE': true,
+  'POSTING_FIND': true,
+  'POSTING_FIND_BY_ID': true,
+  'POSTING_FIND_ONE': true,
+
+  'SUPPLIER_CREDIT_NOTE_FIND': true,
+  'SUPPLIER_CREDIT_NOTE_FIND_BY_ID': true,
+  'SUPPLIER_CREDIT_NOTE_FIND_ONE': true,
+
+  'SUPPLIER_INVOICE_FIND': true,
+  'SUPPLIER_INVOICE_FIND_BY_ID': true,
+  'SUPPLIER_INVOICE_FIND_ONE': true,
+
+  'SUPPLIER_ORDER_FIND': true,
+  'SUPPLIER_ORDER_FIND_BY_ID': true,
+  'SUPPLIER_ORDER_FIND_ONE': true,
+
+  'USER_FIND': true,
+  'USER_FIND_FIND_BY_ID': true,
+  'USER_FIND_ONE':  true
+};

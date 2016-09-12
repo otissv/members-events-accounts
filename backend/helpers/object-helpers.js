@@ -10,15 +10,14 @@ export function isCollectionEmpty (arry) {
 
 
 export function isObjectEmpty (obj) {
-
-  function check (obj) {
+  function check (val) {
 
     // checks if object is truthy or falsey
-    if (!obj || obj.trim === '') return true;
+    if (!val || val.trim === '') return true;
 
     // checks objects length property (array)
-    if (obj.length && obj.length > 0) return true;
-    if (Object.keys(obj).length === 0) return true;
+    if (val.length && val.length === 0) return true;
+    if (Object.keys(val).length === 0) return true;
   }
 
   // checks all object properties are empty

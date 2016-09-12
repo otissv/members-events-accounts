@@ -26,5 +26,5 @@ export default function env (app) {
   */
   app.set('baseURL', config.baseURL);
   app.set('shuttingDown', false);
-  app.locals = Object.assign({}, app.locals, config);
+  app.locals = {...app.locals, ...config};
 };

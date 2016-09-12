@@ -6,16 +6,13 @@
 
 import redis from 'redis';
 
-let client;
-
-export function connection (options) {
-
-  // Create the database connection
-  client = redis.createClient(options.port, options.host);
+export function connection ({ port, uri }) {
+  let client;
+  client = redis.createClient({ port, uri });
 
   // Event handlers
   client.on('connect', () => {
-    console.log(`Redis connected to ${options.host}:${options.port}`);
+    console.log(`Redis connected to ${uri}:${port}`);
   });
 
 
@@ -24,10 +21,14 @@ export function connection (options) {
     client.quit();
   });
 
-};
-
-export function instance () {
+  client.on('error', function (err) {
+    console.log('Error ' + err);
+  });
 
   // Return instance of redis client
-  return client;
+  return client
 };
+
+export default {
+  connect: (options) => connection(options)
+}
